@@ -1,16 +1,19 @@
-import classes from './NavBar.module.css'
 import CartWidget from '../CartWidget/CartWidget'
+import { Link } from 'react-router-dom'
+import styles from '../NavBar/Navbar.module.css'
+
+
 
 const NavBar = () => {
     return (
-        <nav>
-            <h1 className={classes.logo}>JBL Lovers</h1>
-            <section>
-                <button>Auriculares</button>
-                <button>Parlantes</button>
-                <button>Barras de Sonido</button>
+        <nav className={styles.nav}>
+            <Link className={styles.logo} to='/'>JBL LOVERS</Link>
+            <section className={styles.sect}>
+                <Link className={styles.button} to='/category/auricular'>Auriculares</Link>
+                <Link className={styles.button} to='/category/parlante'>Parlantes</Link>
+                <Link className={styles.button} to='/category/partybox'>PartyBox</Link>
             </section>
-            <CartWidget/>
+            <CartWidget />
         </nav>
     )
 }
